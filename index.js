@@ -105,6 +105,7 @@ class Seasons {
   next() {
     // ✨ implement
     const seasonsArray = ['summer', 'fall', 'winter', 'spring']
+    this.seasonIdx >= 3 ? this.seasonIdx -= 4 : null
     return seasonsArray[this.seasonIdx += 1]
   }
 }
