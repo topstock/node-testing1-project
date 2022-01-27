@@ -6,14 +6,13 @@
  * EXAMPLE
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
-function trimProperties(obj) {
+ function trimProperties(obj) {
   // ✨ implement
-  const newObj = new Object(obj)
-  const keys = Object.keys(newObj)
-
-  keys.forEach( key => newObj[key] = newObj[key].trim())
-  return newObj
-
+  const result = {}
+  for (let prop in obj) {
+    result[prop] = obj[prop].trim()
+  }
+  return result
 }
 
 /**
@@ -26,8 +25,9 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
-  const keys = Object.keys(obj)
-  keys.forEach( key => obj[key] = obj[key].trim())
+  for (let prop in obj) {
+    obj[prop] = obj[prop].trim()
+  }
   return obj
 }
 
@@ -54,7 +54,7 @@ class Counter {
     // ✨ initialize whatever properties are needed
     this.initialNumber = initialNumber
     this.countDownStart =  false;
-    this.currentCount = intialNumber;
+    this.currentCount = initialNumber;
   }
 
   /**
@@ -71,7 +71,7 @@ class Counter {
    */
   countDown() {
     // ✨ implement
-    if (currentCount) {
+    if (this.currentCount) {
       this.countDownStart? this.currentCount -= 1 : this.countDownStart=true
       return this.currentCount
     } else {
