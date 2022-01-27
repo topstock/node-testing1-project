@@ -9,8 +9,9 @@
 function trimProperties(obj) {
   // ✨ implement
   const newObj = new Object(obj)
-  const keys = Object.keys(obj)
-  keys.forEach( key => newObj[key] = obj[key].trim())
+  const keys = Object.keys(newObj)
+
+  keys.forEach( key => newObj[key] = newObj[key].trim())
   return newObj
 
 }
